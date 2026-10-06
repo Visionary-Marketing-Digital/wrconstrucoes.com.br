@@ -1,0 +1,11 @@
+/* Carrossel da seção Sobre Nós */
+.about-carousel,
+.about-carousel-item {
+  width: 100%;
+}
+
+.about-carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
