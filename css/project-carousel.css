@@ -1,0 +1,101 @@
+/* Carrossel do portfólio, mantendo a identidade visual do tema */
+.project-carousel-filters ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 12px;
+}
+
+.project-carousel .owl-stage {
+  display: flex;
+}
+
+.project-carousel .owl-item {
+  display: flex;
+}
+
+.project-carousel--single .owl-stage {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.project-carousel-item,
+.project-carousel .single-project,
+.project-carousel .single-project > .relative {
+  width: 100%;
+  height: 100%;
+}
+
+.project-carousel .single-project {
+  margin-bottom: 0;
+}
+
+.project-carousel .thumb {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project-carousel .thumb .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-carousel .single-project .middle {
+  padding: 22px 24px;
+}
+
+.project-carousel .owl-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.project-carousel .owl-nav button.owl-prev,
+.project-carousel .owl-nav button.owl-next {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #263a4e;
+  border-radius: 50%;
+  background: #fff;
+  color: #263a4e;
+  font-size: 18px;
+  line-height: 40px;
+  transition: all 0.3s ease;
+}
+
+.project-carousel .owl-nav button.owl-prev:hover,
+.project-carousel .owl-nav button.owl-next:hover,
+.project-carousel .owl-nav button.owl-prev:focus,
+.project-carousel .owl-nav button.owl-next:focus {
+  border-color: #cea06c;
+  background: #cea06c;
+  color: #fff;
+  outline: none;
+}
+
+@media (max-width: 575px) {
+  .project-carousel-filters ul {
+    column-gap: 8px;
+  }
+
+  .project-area .project-carousel-filters ul li {
+    padding: 0 7px;
+    font-size: 12px;
+  }
+
+  .project-carousel .single-project .middle {
+    top: auto;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    min-width: 0;
+    padding: 16px 18px;
+  }
+
+  .project-carousel .single-project .middle h4 {
+    font-size: 18px;
+  }
+}
