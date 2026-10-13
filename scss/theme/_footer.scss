@@ -24,6 +24,9 @@
         li {
           margin-bottom: 15px;
           list-style: none;
+          .footer-service-label {
+            color: $text-color;
+          }
           a {
             @include transition();
             color: $text-color;
@@ -116,4 +119,3 @@
       }
     }
   }
-  
