@@ -5,7 +5,7 @@ $(document).ready(function () {
     items: 1,
     loop: true,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 1700,
     autoplayHoverPause: true,
     smartSpeed: 600,
     nav: false,
