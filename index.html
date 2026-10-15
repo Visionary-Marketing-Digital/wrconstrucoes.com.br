@@ -312,7 +312,6 @@
               action="contact_process.php"
               method="post"
               id="contactForm"
-              novalidate="novalidate"
             >
               <div class="col-md-6">
                 <div class="form-group">
@@ -324,6 +323,7 @@
                     placeholder="Seu nome"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Seu nome'"
+                    maxlength="100"
                     required=""
                   />
                 </div>
@@ -336,6 +336,7 @@
                     placeholder="Email"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Email'"
+                    maxlength="254"
                     required=""
                   />
                 </div>
@@ -348,6 +349,7 @@
                     placeholder="Assunto"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Assunto'"
+                    maxlength="150"
                     required=""
                   />
                 </div>
@@ -362,14 +364,22 @@
                     placeholder="Digite sua mensagem"
                     onfocus="this.placeholder = ''"
                     onblur="this.placeholder = 'Digite sua mensagem'"
+                    maxlength="5000"
                     required=""
                   ></textarea>
                 </div>
+              </div>
+              <div class="d-none" aria-hidden="true">
+                <label for="website">Não preencha este campo</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
               </div>
               <div class="col-md-12 text-right">
                 <button type="submit" value="submit" class="btn primary-btn">
                   Enviar mensagem
                 </button>
+              </div>
+              <div class="col-md-12 mt-3">
+                <div id="contactFormStatus" class="alert d-none" role="status" aria-live="polite"></div>
               </div>
             </form>
           </div>
@@ -706,6 +716,7 @@
 	<script src="js/main.js"></script>
 	<script src="js/about-carousel.js"></script>
 	<script src="js/project-carousel.js"></script>
+	<script src="js/contact-form.js"></script>
 </body>
 
 </html>
