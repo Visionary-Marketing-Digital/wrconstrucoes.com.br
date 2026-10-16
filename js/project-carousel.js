@@ -9,6 +9,35 @@ $(document).ready(function () {
 
   var $projects = $carousel.children(".project-carousel-item").detach();
 
+  function getInterleavedProjects() {
+    var categoryFilters = [
+      ".residencial",
+      ".comercial",
+      ".reforma",
+      ".manutencao"
+    ];
+    var projectGroups = [];
+    var orderedProjects = [];
+    var largestGroupSize = 0;
+
+    $.each(categoryFilters, function (_, categoryFilter) {
+      var categoryProjects = $projects.filter(categoryFilter).toArray();
+
+      projectGroups.push(categoryProjects);
+      largestGroupSize = Math.max(largestGroupSize, categoryProjects.length);
+    });
+
+    for (var projectIndex = 0; projectIndex < largestGroupSize; projectIndex += 1) {
+      $.each(projectGroups, function (_, categoryProjects) {
+        if (categoryProjects[projectIndex]) {
+          orderedProjects.push(categoryProjects[projectIndex]);
+        }
+      });
+    }
+
+    return $(orderedProjects);
+  }
+
   function showProjects(filter) {
     if ($carousel.hasClass("owl-loaded")) {
       $carousel.trigger("destroy.owl.carousel");
@@ -18,7 +47,7 @@ $(document).ready(function () {
     $carousel.empty();
 
     var $visibleProjects = filter === ".all"
-      ? $projects
+      ? getInterleavedProjects()
       : $projects.filter(filter);
 
     $visibleProjects.each(function () {
