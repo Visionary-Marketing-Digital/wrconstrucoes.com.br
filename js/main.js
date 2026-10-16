@@ -25,11 +25,29 @@ $(document).ready(function () {
   /*  Magnific Pop up js (Home Video)
   /*----------------------------------------------------*/
   $('#play-home-video').magnificPopup({
-    type: 'iframe',
+    type: 'inline',
     mainClass: 'mfp-fade',
     removalDelay: 160,
     preloader: false,
-    fixedContentPos: false
+    fixedContentPos: false,
+    callbacks: {
+      open: function () {
+        var video = document.getElementById('home-institutional-video');
+
+        if (video) {
+          video.currentTime = 0;
+          video.play();
+        }
+      },
+      close: function () {
+        var video = document.getElementById('home-institutional-video');
+
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    }
   });
 
   $('.img-pop-up').magnificPopup({
