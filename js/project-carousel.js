@@ -90,6 +90,28 @@ $(document).ready(function () {
     }
   }
 
+  $carousel.on("click", ".overlay", function (event) {
+    var imageSource = $(this)
+      .closest(".project-carousel-item")
+      .find(".thumb img")
+      .attr("src");
+
+    event.preventDefault();
+
+    if (!imageSource) {
+      return;
+    }
+
+    $.magnificPopup.open({
+      items: {
+        src: imageSource,
+        type: "image"
+      },
+      mainClass: "mfp-fade",
+      removalDelay: 160
+    });
+  });
+
   $(".project-carousel-filters li").on("click", function (event) {
     event.stopImmediatePropagation();
 
